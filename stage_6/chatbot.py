@@ -2,13 +2,13 @@ import streamlit as st
 import uuid
 import requests
 
-# Backend URLs define
-LOAD_CHAT_URL = "http://127.0.0.1:5000/load_chat/"
-SAVE_CHAT_URL = "http://127.0.0.1:5000/save_chat/"
-DELETE_CHAT_URL = "http://127.0.0.1:5000/delete_chat/"
-UPLOAD_PDF_URL = "http://127.0.0.1:5000/upload_pdf/"
-CHAT_URL = "http://127.0.0.1:5000/chat/"
-RAG_CHAT_URL = "http://127.0.0.1:5000/rag_chat/"
+# # الجديد
+LOAD_CHAT_URL = "http://127.0.0.1:8001/load_chat/"
+SAVE_CHAT_URL = "http://127.0.0.1:8001/save_chat/"
+DELETE_CHAT_URL = "http://127.0.0.1:8001/delete_chat/"
+UPLOAD_PDF_URL = "http://127.0.0.1:8001/upload_pdf/"
+CHAT_URL = "http://127.0.0.1:8001/chat/"
+RAG_CHAT_URL = "http://127.0.0.1:8001/rag_chat/"
 
 # Initialize session state
 if "history_chats" not in st.session_state:

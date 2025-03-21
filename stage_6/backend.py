@@ -1,21 +1,3 @@
-import os
-from dotenv import load_dotenv
-
-# Load environment variables
-load_dotenv()
-
-# Retrieve values
-openai_api_key = os.getenv("OPENAI_API_KEY")
-chroma_host = os.getenv("CHROMADB_HOST")
-chroma_port = os.getenv("CHROMADB_PORT")
-
-# Validate values
-if not openai_api_key:
-    raise ValueError("OPENAI_API_KEY is missing from the environment variables.")
-
-if not chroma_host or not chroma_port:
-    raise ValueError("CHROMADB_HOST or CHROMADB_PORT is missing from the environment variables.")
-
 from fastapi import FastAPI, File, UploadFile, HTTPException, Depends
 from pydantic import BaseModel
 from openai import OpenAI
@@ -350,4 +332,5 @@ async def rag_chat(request: RAGChatRequest):
 
     # Use StreamingResponse to return
     return StreamingResponse(stream_response(), media_type="text/plain")
+
 
